@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Will You Be My Girlfriend?</title>
+  <style>
+    body {
+      margin: 0;
+      overflow: hidden;
+      background: linear-gradient(to bottom, #ffe0f0, #fff0ff);
+      font-family: 'Segoe UI', sans-serif;
+      text-align: center;
+    }
+
+    h1 {
+      margin-top: 80px;
+      font-size: 1.8em;
+      color: #e91e63;
+      background: #fff;
+      display: inline-block;
+      padding: 10px 20px;
+      border-radius: 30px;
+      box-shadow: 0 0 20px rgba(0,0,0,0.1);
+    }
+
+    .hearts, .butterflies {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .heart, .butterfly {
+      position: absolute;
+      width: 30px;
+      height: 30px;
+      animation: floatUp 4s linear infinite;
+    }
+
+    .heart {
+      background-color: #ff3366;
+      transform: rotate(45deg);
+    }
+
+    .heart::before,
+    .heart::after {
+      content: '';
+      position: absolute;
+      width: 30px;
+      height: 30px;
+      background-color: #ff3366;
+      border-radius: 50%;
+    }
+
+    .heart::before { top: -15px; left: 0; }
+    .heart::after { left: -15px; top: 0; }
+
+    .butterfly {
+      background-image: url('https://uploads.onecompiler.io/43ryqvx44/43sk52hcr/WhatsApp%20Image%202025-08-03%20at%2010.21.00_5b9690de.jpg');
+      background-size: cover;
+      background-repeat: no-repeat;
+    }
+
+    @keyframes floatUp {
+      0% { transform: translateY(100vh) rotate(0deg); opacity: 1; }
+      100% { transform: translateY(-100vh) rotate(720deg); opacity: 0; }
+    }
+
+    .container {
+      position: relative;
+      z-index: 2;
+      margin-top: 40px;
+    }
+
+    /* Simplified, non-animated buttons */
+    .buttons label {
+      font-size: 1.3em;
+      margin: 0 15px;
+      padding: 12px 25px;
+      border-radius: 25px;
+      background: #ff69b4;
+      color: white;
+      cursor: pointer;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      display: inline-block;
+    }
+
+    input[type="radio"] {
+      display: none;
+    }
+
+    .response {
+      margin-top: 40px;
+      font-size: 1.8em;
+      color: #880e4f;
+      display: none;
+    }
+
+    #yes:checked ~ .container .response.yes,
+    #no:checked ~ .container .response.no {
+      display: block;
+    }
+
+    audio {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Background Music -->
+  <audio autoplay loop>
+    <source src="https://www.bensound.com/bensound-music/bensound-love.mp3" type="audio/mpeg">
+  </audio>
+
+  <!-- Floating Decorations -->
+  <div class="hearts">
+    <div class="heart" style="left:10%; animation-delay: 0s;"></div>
+    <div class="heart" style="left:25%; animation-delay: 2s;"></div>
+    <div class="heart" style="left:40%; animation-delay: 4s;"></div>
+    <div class="heart" style="left:60%; animation-delay: 1s;"></div>
+    <div class="heart" style="left:80%; animation-delay: 3s;"></div>
+  </div>
+
+  <div class="butterflies">
+    <div class="butterfly" style="left:15%; animation-delay: 1s;"></div>
+    <div class="butterfly" style="left:35%; animation-delay: 3s;"></div>
+    <div class="butterfly" style="left:55%; animation-delay: 5s;"></div>
+    <div class="butterfly" style="left:75%; animation-delay: 2s;"></div>
+    <div class="butterfly" style="left:90%; animation-delay: 4s;"></div>
+  </div>
+
+  <!-- Button Logic -->
+  <input type="radio" name="answer" id="yes">
+  <input type="radio" name="answer" id="no">
+
+  <div class="container">
+    <h1>Even though we have only known each other for a short time, I have felt something special from the start. Thank you for trusting me with your heart. I’m really excited to grow this together—step by step, with honesty and care."
+       I LOVE YOU NANDHU 💖</h1>
+
+    <div class="buttons">
+      <label for="yes">Yes 💘</label>
+      <label for="no">No 😢</label>
+    </div>
+
+    <div class="response yes">🎉 Yay! I love you so much! 💍💖</div>
+    <div class="response no">😢 Oh no! My heart just broke 💔</div>
+  </div>
+
+</body>
+</html>
